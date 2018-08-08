@@ -1,0 +1,25 @@
+
+{
+    "demoApp": {
+        "solicitudes" : {
+            "home": {
+                "title": "Solicitudes",
+                "createLabel": "Crear nuevo Solicitudes",
+                "createOrEditLabel": "Crear o editar Solicitudes"
+            },
+            "created": "Un nuevo Solicitudes ha sido creado con el identificador {{ param }}",
+            "updated": "Un Solicitudes ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Solicitudes ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Solicitudes {{ id }}?"
+            },
+            "detail": {
+                "title": "Solicitudes"
+            },
+            "id_solicitudes": "Id Solicitudes",
+            "nombre_corto": "Nombre Corto",
+            "apellido": "Apellido",
+            "fecha_Registro": "Fecha Registro"
+        }
+    }
+}

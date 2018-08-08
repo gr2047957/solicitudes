@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-solicitudes-heading" jhiTranslate="demoApp.solicitudes.home.createOrEditLabel">Create or edit a Solicitudes</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!solicitudes.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="solicitudes.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.id_solicitudes" for="field_id_solicitudes">Id Solicitudes</label>
+                    <input type="text" class="form-control" name="id_solicitudes" id="field_id_solicitudes"
+                        [(ngModel)]="solicitudes.id_solicitudes" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.nombre_corto" for="field_nombre_corto">Nombre Corto</label>
+                    <input type="text" class="form-control" name="nombre_corto" id="field_nombre_corto"
+                        [(ngModel)]="solicitudes.nombre_corto" required/>
+                    <div [hidden]="!(editForm.controls.nombre_corto?.dirty && editForm.controls.nombre_corto?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nombre_corto?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.apellido" for="field_apellido">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" id="field_apellido"
+                        [(ngModel)]="solicitudes.apellido" required/>
+                    <div [hidden]="!(editForm.controls.apellido?.dirty && editForm.controls.apellido?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.apellido?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.fecha_Registro" for="field_fecha_Registro">Fecha Registro</label>
+                    <div class="input-group">
+                        <input id="field_fecha_Registro" type="text" class="form-control" name="fecha_Registro" ngbDatepicker  #fecha_RegistroDp="ngbDatepicker" [(ngModel)]="solicitudes.fecha_Registro"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fecha_RegistroDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.fecha_Registro?.dirty && editForm.controls.fecha_Registro?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fecha_Registro?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
