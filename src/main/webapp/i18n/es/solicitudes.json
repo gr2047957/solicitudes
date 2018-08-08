@@ -17,9 +17,30 @@
                 "title": "Solicitudes"
             },
             "id_solicitudes": "Id Solicitudes",
-            "nombre_corto": "Nombre Corto",
-            "apellido": "Apellido",
-            "fecha_Registro": "Fecha Registro"
+            "fecha_Registro": "Fecha Registro",
+            "solicitante": "Solicitante",
+            "tipoSolicitud": "Tipo Solicitud",
+            "personaASustituir": "Persona A Sustituir",
+            "direccion": "Direccion",
+            "unidadNegocio": "Unidad Negocio",
+            "ceco": "Ceco",
+            "reportaA": "Reporta A",
+            "servicio": "Servicio",
+            "periodosAsignacion": "Periodos Asignacion",
+            "nombreCandidatoPropuesto": "Nombre Candidato Propuesto",
+            "apellidosCandidatoPropuesto": "Apellidos Candidato Propuesto",
+            "proveedorCandidatoPropuesto": "Proveedor Candidato Propuesto",
+            "disponibilidadViajar": "Disponibilidad Viajar",
+            "experienciaSectorBancario": "Experiencia Sector Bancario",
+            "nivelBancario": "Nivel Bancario",
+            "prioridad": "Prioridad",
+            "tipoRecurso": "Tipo Recurso",
+            "experienciaBancaria": "Experiencia Bancaria",
+            "skillTecnico": "Skill Tecnico",
+            "obligatorio": "Obligatorio",
+            "experiencia": "Experiencia",
+            "softSkill": "Soft Skill",
+            "nivelSoftSkill": "Nivel Soft Skill"
         }
     }
 }

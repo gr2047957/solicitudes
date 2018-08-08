@@ -15,28 +15,6 @@
                         [(ngModel)]="solicitudes.id_solicitudes" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.nombre_corto" for="field_nombre_corto">Nombre Corto</label>
-                    <input type="text" class="form-control" name="nombre_corto" id="field_nombre_corto"
-                        [(ngModel)]="solicitudes.nombre_corto" required/>
-                    <div [hidden]="!(editForm.controls.nombre_corto?.dirty && editForm.controls.nombre_corto?.invalid)">
-                        <small class="form-text text-danger"
-                        [hidden]="!editForm.controls.nombre_corto?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
-                        </small>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.apellido" for="field_apellido">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" id="field_apellido"
-                        [(ngModel)]="solicitudes.apellido" required/>
-                    <div [hidden]="!(editForm.controls.apellido?.dirty && editForm.controls.apellido?.invalid)">
-                        <small class="form-text text-danger"
-                        [hidden]="!editForm.controls.apellido?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
-                        </small>
-                    </div>
-                </div>
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="demoApp.solicitudes.fecha_Registro" for="field_fecha_Registro">Fecha Registro</label>
                     <div class="input-group">
                         <input id="field_fecha_Registro" type="text" class="form-control" name="fecha_Registro" ngbDatepicker  #fecha_RegistroDp="ngbDatepicker" [(ngModel)]="solicitudes.fecha_Registro"
@@ -48,6 +26,263 @@
                     <div [hidden]="!(editForm.controls.fecha_Registro?.dirty && editForm.controls.fecha_Registro?.invalid)">
                         <small class="form-text text-danger"
                         [hidden]="!editForm.controls.fecha_Registro?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.solicitante" for="field_solicitante">Solicitante</label>
+                    <input type="text" class="form-control" name="solicitante" id="field_solicitante"
+                        [(ngModel)]="solicitudes.solicitante" required/>
+                    <div [hidden]="!(editForm.controls.solicitante?.dirty && editForm.controls.solicitante?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.solicitante?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.tipoSolicitud" for="field_tipoSolicitud">Tipo Solicitud</label>
+                    <input type="text" class="form-control" name="tipoSolicitud" id="field_tipoSolicitud"
+                        [(ngModel)]="solicitudes.tipoSolicitud" required/>
+                    <div [hidden]="!(editForm.controls.tipoSolicitud?.dirty && editForm.controls.tipoSolicitud?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tipoSolicitud?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.personaASustituir" for="field_personaASustituir">Persona A Sustituir</label>
+                    <input type="text" class="form-control" name="personaASustituir" id="field_personaASustituir"
+                        [(ngModel)]="solicitudes.personaASustituir" required/>
+                    <div [hidden]="!(editForm.controls.personaASustituir?.dirty && editForm.controls.personaASustituir?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.personaASustituir?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.direccion" for="field_direccion">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="field_direccion"
+                        [(ngModel)]="solicitudes.direccion" required/>
+                    <div [hidden]="!(editForm.controls.direccion?.dirty && editForm.controls.direccion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.direccion?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.unidadNegocio" for="field_unidadNegocio">Unidad Negocio</label>
+                    <input type="text" class="form-control" name="unidadNegocio" id="field_unidadNegocio"
+                        [(ngModel)]="solicitudes.unidadNegocio" required/>
+                    <div [hidden]="!(editForm.controls.unidadNegocio?.dirty && editForm.controls.unidadNegocio?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.unidadNegocio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.ceco" for="field_ceco">Ceco</label>
+                    <input type="text" class="form-control" name="ceco" id="field_ceco"
+                        [(ngModel)]="solicitudes.ceco" required/>
+                    <div [hidden]="!(editForm.controls.ceco?.dirty && editForm.controls.ceco?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ceco?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.reportaA" for="field_reportaA">Reporta A</label>
+                    <input type="text" class="form-control" name="reportaA" id="field_reportaA"
+                        [(ngModel)]="solicitudes.reportaA" required/>
+                    <div [hidden]="!(editForm.controls.reportaA?.dirty && editForm.controls.reportaA?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reportaA?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.servicio" for="field_servicio">Servicio</label>
+                    <input type="text" class="form-control" name="servicio" id="field_servicio"
+                        [(ngModel)]="solicitudes.servicio" required/>
+                    <div [hidden]="!(editForm.controls.servicio?.dirty && editForm.controls.servicio?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.servicio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.periodosAsignacion" for="field_periodosAsignacion">Periodos Asignacion</label>
+                    <input type="text" class="form-control" name="periodosAsignacion" id="field_periodosAsignacion"
+                        [(ngModel)]="solicitudes.periodosAsignacion" required/>
+                    <div [hidden]="!(editForm.controls.periodosAsignacion?.dirty && editForm.controls.periodosAsignacion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.periodosAsignacion?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.nombreCandidatoPropuesto" for="field_nombreCandidatoPropuesto">Nombre Candidato Propuesto</label>
+                    <input type="text" class="form-control" name="nombreCandidatoPropuesto" id="field_nombreCandidatoPropuesto"
+                        [(ngModel)]="solicitudes.nombreCandidatoPropuesto" required/>
+                    <div [hidden]="!(editForm.controls.nombreCandidatoPropuesto?.dirty && editForm.controls.nombreCandidatoPropuesto?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nombreCandidatoPropuesto?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.apellidosCandidatoPropuesto" for="field_apellidosCandidatoPropuesto">Apellidos Candidato Propuesto</label>
+                    <input type="text" class="form-control" name="apellidosCandidatoPropuesto" id="field_apellidosCandidatoPropuesto"
+                        [(ngModel)]="solicitudes.apellidosCandidatoPropuesto" required/>
+                    <div [hidden]="!(editForm.controls.apellidosCandidatoPropuesto?.dirty && editForm.controls.apellidosCandidatoPropuesto?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.apellidosCandidatoPropuesto?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.proveedorCandidatoPropuesto" for="field_proveedorCandidatoPropuesto">Proveedor Candidato Propuesto</label>
+                    <input type="text" class="form-control" name="proveedorCandidatoPropuesto" id="field_proveedorCandidatoPropuesto"
+                        [(ngModel)]="solicitudes.proveedorCandidatoPropuesto" required/>
+                    <div [hidden]="!(editForm.controls.proveedorCandidatoPropuesto?.dirty && editForm.controls.proveedorCandidatoPropuesto?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.proveedorCandidatoPropuesto?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.disponibilidadViajar" for="field_disponibilidadViajar">Disponibilidad Viajar</label>
+                    <input type="checkbox" class="form-control" name="disponibilidadViajar" id="field_disponibilidadViajar"
+                        [(ngModel)]="solicitudes.disponibilidadViajar" />
+                    <div [hidden]="!(editForm.controls.disponibilidadViajar?.dirty && editForm.controls.disponibilidadViajar?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.disponibilidadViajar?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.experienciaSectorBancario" for="field_experienciaSectorBancario">Experiencia Sector Bancario</label>
+                    <input type="checkbox" class="form-control" name="experienciaSectorBancario" id="field_experienciaSectorBancario"
+                        [(ngModel)]="solicitudes.experienciaSectorBancario" />
+                    <div [hidden]="!(editForm.controls.experienciaSectorBancario?.dirty && editForm.controls.experienciaSectorBancario?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.experienciaSectorBancario?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.nivelBancario" for="field_nivelBancario">Nivel Bancario</label>
+                    <input type="text" class="form-control" name="nivelBancario" id="field_nivelBancario"
+                        [(ngModel)]="solicitudes.nivelBancario" required/>
+                    <div [hidden]="!(editForm.controls.nivelBancario?.dirty && editForm.controls.nivelBancario?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nivelBancario?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.prioridad" for="field_prioridad">Prioridad</label>
+                    <input type="number" class="form-control" name="prioridad" id="field_prioridad"
+                        [(ngModel)]="solicitudes.prioridad" required/>
+                    <div [hidden]="!(editForm.controls.prioridad?.dirty && editForm.controls.prioridad?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.prioridad?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.prioridad?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.tipoRecurso" for="field_tipoRecurso">Tipo Recurso</label>
+                    <input type="text" class="form-control" name="tipoRecurso" id="field_tipoRecurso"
+                        [(ngModel)]="solicitudes.tipoRecurso" required/>
+                    <div [hidden]="!(editForm.controls.tipoRecurso?.dirty && editForm.controls.tipoRecurso?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tipoRecurso?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.experienciaBancaria" for="field_experienciaBancaria">Experiencia Bancaria</label>
+                    <input type="text" class="form-control" name="experienciaBancaria" id="field_experienciaBancaria"
+                        [(ngModel)]="solicitudes.experienciaBancaria" required/>
+                    <div [hidden]="!(editForm.controls.experienciaBancaria?.dirty && editForm.controls.experienciaBancaria?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.experienciaBancaria?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.skillTecnico" for="field_skillTecnico">Skill Tecnico</label>
+                    <input type="text" class="form-control" name="skillTecnico" id="field_skillTecnico"
+                        [(ngModel)]="solicitudes.skillTecnico" required/>
+                    <div [hidden]="!(editForm.controls.skillTecnico?.dirty && editForm.controls.skillTecnico?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.skillTecnico?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.obligatorio" for="field_obligatorio">Obligatorio</label>
+                    <input type="text" class="form-control" name="obligatorio" id="field_obligatorio"
+                        [(ngModel)]="solicitudes.obligatorio" required/>
+                    <div [hidden]="!(editForm.controls.obligatorio?.dirty && editForm.controls.obligatorio?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.obligatorio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.experiencia" for="field_experiencia">Experiencia</label>
+                    <input type="text" class="form-control" name="experiencia" id="field_experiencia"
+                        [(ngModel)]="solicitudes.experiencia" required/>
+                    <div [hidden]="!(editForm.controls.experiencia?.dirty && editForm.controls.experiencia?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.experiencia?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.softSkill" for="field_softSkill">Soft Skill</label>
+                    <input type="text" class="form-control" name="softSkill" id="field_softSkill"
+                        [(ngModel)]="solicitudes.softSkill" required/>
+                    <div [hidden]="!(editForm.controls.softSkill?.dirty && editForm.controls.softSkill?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.softSkill?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.nivelSoftSkill" for="field_nivelSoftSkill">Nivel Soft Skill</label>
+                    <input type="text" class="form-control" name="nivelSoftSkill" id="field_nivelSoftSkill"
+                        [(ngModel)]="solicitudes.nivelSoftSkill" required/>
+                    <div [hidden]="!(editForm.controls.nivelSoftSkill?.dirty && editForm.controls.nivelSoftSkill?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nivelSoftSkill?.errors?.required" jhiTranslate="entity.validation.required">
                         This field is required.
                         </small>
                     </div>

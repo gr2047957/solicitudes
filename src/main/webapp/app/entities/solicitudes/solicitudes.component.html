@@ -16,9 +16,30 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="id_solicitudes"><span jhiTranslate="demoApp.solicitudes.id_solicitudes">Id Solicitudes</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="nombre_corto"><span jhiTranslate="demoApp.solicitudes.nombre_corto">Nombre Corto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="apellido"><span jhiTranslate="demoApp.solicitudes.apellido">Apellido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="fecha_Registro"><span jhiTranslate="demoApp.solicitudes.fecha_Registro">Fecha Registro</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="solicitante"><span jhiTranslate="demoApp.solicitudes.solicitante">Solicitante</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoSolicitud"><span jhiTranslate="demoApp.solicitudes.tipoSolicitud">Tipo Solicitud</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="personaASustituir"><span jhiTranslate="demoApp.solicitudes.personaASustituir">Persona A Sustituir</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="direccion"><span jhiTranslate="demoApp.solicitudes.direccion">Direccion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="unidadNegocio"><span jhiTranslate="demoApp.solicitudes.unidadNegocio">Unidad Negocio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ceco"><span jhiTranslate="demoApp.solicitudes.ceco">Ceco</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reportaA"><span jhiTranslate="demoApp.solicitudes.reportaA">Reporta A</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="servicio"><span jhiTranslate="demoApp.solicitudes.servicio">Servicio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="periodosAsignacion"><span jhiTranslate="demoApp.solicitudes.periodosAsignacion">Periodos Asignacion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nombreCandidatoPropuesto"><span jhiTranslate="demoApp.solicitudes.nombreCandidatoPropuesto">Nombre Candidato Propuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="apellidosCandidatoPropuesto"><span jhiTranslate="demoApp.solicitudes.apellidosCandidatoPropuesto">Apellidos Candidato Propuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="proveedorCandidatoPropuesto"><span jhiTranslate="demoApp.solicitudes.proveedorCandidatoPropuesto">Proveedor Candidato Propuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="disponibilidadViajar"><span jhiTranslate="demoApp.solicitudes.disponibilidadViajar">Disponibilidad Viajar</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="experienciaSectorBancario"><span jhiTranslate="demoApp.solicitudes.experienciaSectorBancario">Experiencia Sector Bancario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nivelBancario"><span jhiTranslate="demoApp.solicitudes.nivelBancario">Nivel Bancario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prioridad"><span jhiTranslate="demoApp.solicitudes.prioridad">Prioridad</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoRecurso"><span jhiTranslate="demoApp.solicitudes.tipoRecurso">Tipo Recurso</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="experienciaBancaria"><span jhiTranslate="demoApp.solicitudes.experienciaBancaria">Experiencia Bancaria</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="skillTecnico"><span jhiTranslate="demoApp.solicitudes.skillTecnico">Skill Tecnico</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="obligatorio"><span jhiTranslate="demoApp.solicitudes.obligatorio">Obligatorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="experiencia"><span jhiTranslate="demoApp.solicitudes.experiencia">Experiencia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="softSkill"><span jhiTranslate="demoApp.solicitudes.softSkill">Soft Skill</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nivelSoftSkill"><span jhiTranslate="demoApp.solicitudes.nivelSoftSkill">Nivel Soft Skill</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -26,9 +47,30 @@
             <tr *ngFor="let solicitudes of solicitudes ;trackBy: trackId">
                 <td><a [routerLink]="['/solicitudes', solicitudes.id, 'view' ]">{{solicitudes.id}}</a></td>
                 <td>{{solicitudes.id_solicitudes}}</td>
-                <td>{{solicitudes.nombre_corto}}</td>
-                <td>{{solicitudes.apellido}}</td>
                 <td>{{solicitudes.fecha_Registro | date:'mediumDate'}}</td>
+                <td>{{solicitudes.solicitante}}</td>
+                <td>{{solicitudes.tipoSolicitud}}</td>
+                <td>{{solicitudes.personaASustituir}}</td>
+                <td>{{solicitudes.direccion}}</td>
+                <td>{{solicitudes.unidadNegocio}}</td>
+                <td>{{solicitudes.ceco}}</td>
+                <td>{{solicitudes.reportaA}}</td>
+                <td>{{solicitudes.servicio}}</td>
+                <td>{{solicitudes.periodosAsignacion}}</td>
+                <td>{{solicitudes.nombreCandidatoPropuesto}}</td>
+                <td>{{solicitudes.apellidosCandidatoPropuesto}}</td>
+                <td>{{solicitudes.proveedorCandidatoPropuesto}}</td>
+                <td>{{solicitudes.disponibilidadViajar}}</td>
+                <td>{{solicitudes.experienciaSectorBancario}}</td>
+                <td>{{solicitudes.nivelBancario}}</td>
+                <td>{{solicitudes.prioridad}}</td>
+                <td>{{solicitudes.tipoRecurso}}</td>
+                <td>{{solicitudes.experienciaBancaria}}</td>
+                <td>{{solicitudes.skillTecnico}}</td>
+                <td>{{solicitudes.obligatorio}}</td>
+                <td>{{solicitudes.experiencia}}</td>
+                <td>{{solicitudes.softSkill}}</td>
+                <td>{{solicitudes.nivelSoftSkill}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

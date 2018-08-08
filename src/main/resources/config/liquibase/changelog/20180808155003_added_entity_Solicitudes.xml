@@ -26,15 +26,99 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="nombre_corto" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-
-            <column name="apellido" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-
             <column name="fecha_registro" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="solicitante" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="tipo_solicitud" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="persona_a_sustituir" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="direccion" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="unidad_negocio" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="ceco" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="reporta_a" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="servicio" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="periodos_asignacion" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="nombre_candidato_propuesto" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="apellidos_candidato_propuesto" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="proveedor_candidato_propuesto" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="disponibilidad_viajar" type="bit">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="experiencia_sector_bancario" type="bit">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="nivel_bancario" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="prioridad" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="tipo_recurso" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="experiencia_bancaria" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="skill_tecnico" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="obligatorio" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="experiencia" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="soft_skill" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="nivel_soft_skill" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
 
