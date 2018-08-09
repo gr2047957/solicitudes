@@ -28,7 +28,6 @@
             "servicio": "Servicio",
             "periodosAsignacion": "Periodos Asignacion",
             "nombreCandidatoPropuesto": "Nombre Candidato Propuesto",
-            "apellidosCandidatoPropuesto": "Apellidos Candidato Propuesto",
             "proveedorCandidatoPropuesto": "Proveedor Candidato Propuesto",
             "disponibilidadViajar": "Disponibilidad Viajar",
             "experienciaSectorBancario": "Experiencia Sector Bancario",
@@ -40,7 +39,8 @@
             "obligatorio": "Obligatorio",
             "experiencia": "Experiencia",
             "softSkill": "Soft Skill",
-            "nivelSoftSkill": "Nivel Soft Skill"
+            "nivelSoftSkill": "Nivel Soft Skill",
+            "apellidoCandidatoPropuesto": "Apellido Candidato Propuesto"
         }
     }
 }

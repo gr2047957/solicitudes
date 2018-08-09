@@ -78,9 +78,6 @@ public class SolicitudesResourceIntTest {
     private static final String DEFAULT_NOMBRE_CANDIDATO_PROPUESTO = "AAAAAAAAAA";
     private static final String UPDATED_NOMBRE_CANDIDATO_PROPUESTO = "BBBBBBBBBB";
 
-    private static final String DEFAULT_APELLIDOS_CANDIDATO_PROPUESTO = "AAAAAAAAAA";
-    private static final String UPDATED_APELLIDOS_CANDIDATO_PROPUESTO = "BBBBBBBBBB";
-
     private static final String DEFAULT_PROVEEDOR_CANDIDATO_PROPUESTO = "AAAAAAAAAA";
     private static final String UPDATED_PROVEEDOR_CANDIDATO_PROPUESTO = "BBBBBBBBBB";
 
@@ -116,6 +113,9 @@ public class SolicitudesResourceIntTest {
 
     private static final String DEFAULT_NIVEL_SOFT_SKILL = "AAAAAAAAAA";
     private static final String UPDATED_NIVEL_SOFT_SKILL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_APELLIDO_CANDIDATO_PROPUESTO = "AAAAAAAAAA";
+    private static final String UPDATED_APELLIDO_CANDIDATO_PROPUESTO = "BBBBBBBBBB";
 
     @Autowired
     private SolicitudesRepository solicitudesRepository;
@@ -172,7 +172,6 @@ public class SolicitudesResourceIntTest {
             .servicio(DEFAULT_SERVICIO)
             .periodosAsignacion(DEFAULT_PERIODOS_ASIGNACION)
             .nombreCandidatoPropuesto(DEFAULT_NOMBRE_CANDIDATO_PROPUESTO)
-            .apellidosCandidatoPropuesto(DEFAULT_APELLIDOS_CANDIDATO_PROPUESTO)
             .proveedorCandidatoPropuesto(DEFAULT_PROVEEDOR_CANDIDATO_PROPUESTO)
             .disponibilidadViajar(DEFAULT_DISPONIBILIDAD_VIAJAR)
             .experienciaSectorBancario(DEFAULT_EXPERIENCIA_SECTOR_BANCARIO)
@@ -184,7 +183,8 @@ public class SolicitudesResourceIntTest {
             .obligatorio(DEFAULT_OBLIGATORIO)
             .experiencia(DEFAULT_EXPERIENCIA)
             .softSkill(DEFAULT_SOFT_SKILL)
-            .nivelSoftSkill(DEFAULT_NIVEL_SOFT_SKILL);
+            .nivelSoftSkill(DEFAULT_NIVEL_SOFT_SKILL)
+            .apellidoCandidatoPropuesto(DEFAULT_APELLIDO_CANDIDATO_PROPUESTO);
         return solicitudes;
     }
 
@@ -220,7 +220,6 @@ public class SolicitudesResourceIntTest {
         assertThat(testSolicitudes.getServicio()).isEqualTo(DEFAULT_SERVICIO);
         assertThat(testSolicitudes.getPeriodosAsignacion()).isEqualTo(DEFAULT_PERIODOS_ASIGNACION);
         assertThat(testSolicitudes.getNombreCandidatoPropuesto()).isEqualTo(DEFAULT_NOMBRE_CANDIDATO_PROPUESTO);
-        assertThat(testSolicitudes.getApellidosCandidatoPropuesto()).isEqualTo(DEFAULT_APELLIDOS_CANDIDATO_PROPUESTO);
         assertThat(testSolicitudes.getProveedorCandidatoPropuesto()).isEqualTo(DEFAULT_PROVEEDOR_CANDIDATO_PROPUESTO);
         assertThat(testSolicitudes.isDisponibilidadViajar()).isEqualTo(DEFAULT_DISPONIBILIDAD_VIAJAR);
         assertThat(testSolicitudes.isExperienciaSectorBancario()).isEqualTo(DEFAULT_EXPERIENCIA_SECTOR_BANCARIO);
@@ -233,6 +232,7 @@ public class SolicitudesResourceIntTest {
         assertThat(testSolicitudes.getExperiencia()).isEqualTo(DEFAULT_EXPERIENCIA);
         assertThat(testSolicitudes.getSoftSkill()).isEqualTo(DEFAULT_SOFT_SKILL);
         assertThat(testSolicitudes.getNivelSoftSkill()).isEqualTo(DEFAULT_NIVEL_SOFT_SKILL);
+        assertThat(testSolicitudes.getApellidoCandidatoPropuesto()).isEqualTo(DEFAULT_APELLIDO_CANDIDATO_PROPUESTO);
     }
 
     @Test
@@ -440,24 +440,6 @@ public class SolicitudesResourceIntTest {
         int databaseSizeBeforeTest = solicitudesRepository.findAll().size();
         // set the field null
         solicitudes.setNombreCandidatoPropuesto(null);
-
-        // Create the Solicitudes, which fails.
-
-        restSolicitudesMockMvc.perform(post("/api/solicitudes")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(solicitudes)))
-            .andExpect(status().isBadRequest());
-
-        List<Solicitudes> solicitudesList = solicitudesRepository.findAll();
-        assertThat(solicitudesList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
-    public void checkApellidosCandidatoPropuestoIsRequired() throws Exception {
-        int databaseSizeBeforeTest = solicitudesRepository.findAll().size();
-        // set the field null
-        solicitudes.setApellidosCandidatoPropuesto(null);
 
         // Create the Solicitudes, which fails.
 
@@ -688,6 +670,24 @@ public class SolicitudesResourceIntTest {
 
     @Test
     @Transactional
+    public void checkApellidoCandidatoPropuestoIsRequired() throws Exception {
+        int databaseSizeBeforeTest = solicitudesRepository.findAll().size();
+        // set the field null
+        solicitudes.setApellidoCandidatoPropuesto(null);
+
+        // Create the Solicitudes, which fails.
+
+        restSolicitudesMockMvc.perform(post("/api/solicitudes")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(solicitudes)))
+            .andExpect(status().isBadRequest());
+
+        List<Solicitudes> solicitudesList = solicitudesRepository.findAll();
+        assertThat(solicitudesList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllSolicitudes() throws Exception {
         // Initialize the database
         solicitudesRepository.saveAndFlush(solicitudes);
@@ -709,7 +709,6 @@ public class SolicitudesResourceIntTest {
             .andExpect(jsonPath("$.[*].servicio").value(hasItem(DEFAULT_SERVICIO.toString())))
             .andExpect(jsonPath("$.[*].periodosAsignacion").value(hasItem(DEFAULT_PERIODOS_ASIGNACION.toString())))
             .andExpect(jsonPath("$.[*].nombreCandidatoPropuesto").value(hasItem(DEFAULT_NOMBRE_CANDIDATO_PROPUESTO.toString())))
-            .andExpect(jsonPath("$.[*].apellidosCandidatoPropuesto").value(hasItem(DEFAULT_APELLIDOS_CANDIDATO_PROPUESTO.toString())))
             .andExpect(jsonPath("$.[*].proveedorCandidatoPropuesto").value(hasItem(DEFAULT_PROVEEDOR_CANDIDATO_PROPUESTO.toString())))
             .andExpect(jsonPath("$.[*].disponibilidadViajar").value(hasItem(DEFAULT_DISPONIBILIDAD_VIAJAR.booleanValue())))
             .andExpect(jsonPath("$.[*].experienciaSectorBancario").value(hasItem(DEFAULT_EXPERIENCIA_SECTOR_BANCARIO.booleanValue())))
@@ -721,7 +720,8 @@ public class SolicitudesResourceIntTest {
             .andExpect(jsonPath("$.[*].obligatorio").value(hasItem(DEFAULT_OBLIGATORIO.toString())))
             .andExpect(jsonPath("$.[*].experiencia").value(hasItem(DEFAULT_EXPERIENCIA.toString())))
             .andExpect(jsonPath("$.[*].softSkill").value(hasItem(DEFAULT_SOFT_SKILL.toString())))
-            .andExpect(jsonPath("$.[*].nivelSoftSkill").value(hasItem(DEFAULT_NIVEL_SOFT_SKILL.toString())));
+            .andExpect(jsonPath("$.[*].nivelSoftSkill").value(hasItem(DEFAULT_NIVEL_SOFT_SKILL.toString())))
+            .andExpect(jsonPath("$.[*].apellidoCandidatoPropuesto").value(hasItem(DEFAULT_APELLIDO_CANDIDATO_PROPUESTO.toString())));
     }
     
 
@@ -748,7 +748,6 @@ public class SolicitudesResourceIntTest {
             .andExpect(jsonPath("$.servicio").value(DEFAULT_SERVICIO.toString()))
             .andExpect(jsonPath("$.periodosAsignacion").value(DEFAULT_PERIODOS_ASIGNACION.toString()))
             .andExpect(jsonPath("$.nombreCandidatoPropuesto").value(DEFAULT_NOMBRE_CANDIDATO_PROPUESTO.toString()))
-            .andExpect(jsonPath("$.apellidosCandidatoPropuesto").value(DEFAULT_APELLIDOS_CANDIDATO_PROPUESTO.toString()))
             .andExpect(jsonPath("$.proveedorCandidatoPropuesto").value(DEFAULT_PROVEEDOR_CANDIDATO_PROPUESTO.toString()))
             .andExpect(jsonPath("$.disponibilidadViajar").value(DEFAULT_DISPONIBILIDAD_VIAJAR.booleanValue()))
             .andExpect(jsonPath("$.experienciaSectorBancario").value(DEFAULT_EXPERIENCIA_SECTOR_BANCARIO.booleanValue()))
@@ -760,7 +759,8 @@ public class SolicitudesResourceIntTest {
             .andExpect(jsonPath("$.obligatorio").value(DEFAULT_OBLIGATORIO.toString()))
             .andExpect(jsonPath("$.experiencia").value(DEFAULT_EXPERIENCIA.toString()))
             .andExpect(jsonPath("$.softSkill").value(DEFAULT_SOFT_SKILL.toString()))
-            .andExpect(jsonPath("$.nivelSoftSkill").value(DEFAULT_NIVEL_SOFT_SKILL.toString()));
+            .andExpect(jsonPath("$.nivelSoftSkill").value(DEFAULT_NIVEL_SOFT_SKILL.toString()))
+            .andExpect(jsonPath("$.apellidoCandidatoPropuesto").value(DEFAULT_APELLIDO_CANDIDATO_PROPUESTO.toString()));
     }
     @Test
     @Transactional
@@ -795,7 +795,6 @@ public class SolicitudesResourceIntTest {
             .servicio(UPDATED_SERVICIO)
             .periodosAsignacion(UPDATED_PERIODOS_ASIGNACION)
             .nombreCandidatoPropuesto(UPDATED_NOMBRE_CANDIDATO_PROPUESTO)
-            .apellidosCandidatoPropuesto(UPDATED_APELLIDOS_CANDIDATO_PROPUESTO)
             .proveedorCandidatoPropuesto(UPDATED_PROVEEDOR_CANDIDATO_PROPUESTO)
             .disponibilidadViajar(UPDATED_DISPONIBILIDAD_VIAJAR)
             .experienciaSectorBancario(UPDATED_EXPERIENCIA_SECTOR_BANCARIO)
@@ -807,7 +806,8 @@ public class SolicitudesResourceIntTest {
             .obligatorio(UPDATED_OBLIGATORIO)
             .experiencia(UPDATED_EXPERIENCIA)
             .softSkill(UPDATED_SOFT_SKILL)
-            .nivelSoftSkill(UPDATED_NIVEL_SOFT_SKILL);
+            .nivelSoftSkill(UPDATED_NIVEL_SOFT_SKILL)
+            .apellidoCandidatoPropuesto(UPDATED_APELLIDO_CANDIDATO_PROPUESTO);
 
         restSolicitudesMockMvc.perform(put("/api/solicitudes")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -830,7 +830,6 @@ public class SolicitudesResourceIntTest {
         assertThat(testSolicitudes.getServicio()).isEqualTo(UPDATED_SERVICIO);
         assertThat(testSolicitudes.getPeriodosAsignacion()).isEqualTo(UPDATED_PERIODOS_ASIGNACION);
         assertThat(testSolicitudes.getNombreCandidatoPropuesto()).isEqualTo(UPDATED_NOMBRE_CANDIDATO_PROPUESTO);
-        assertThat(testSolicitudes.getApellidosCandidatoPropuesto()).isEqualTo(UPDATED_APELLIDOS_CANDIDATO_PROPUESTO);
         assertThat(testSolicitudes.getProveedorCandidatoPropuesto()).isEqualTo(UPDATED_PROVEEDOR_CANDIDATO_PROPUESTO);
         assertThat(testSolicitudes.isDisponibilidadViajar()).isEqualTo(UPDATED_DISPONIBILIDAD_VIAJAR);
         assertThat(testSolicitudes.isExperienciaSectorBancario()).isEqualTo(UPDATED_EXPERIENCIA_SECTOR_BANCARIO);
@@ -843,6 +842,7 @@ public class SolicitudesResourceIntTest {
         assertThat(testSolicitudes.getExperiencia()).isEqualTo(UPDATED_EXPERIENCIA);
         assertThat(testSolicitudes.getSoftSkill()).isEqualTo(UPDATED_SOFT_SKILL);
         assertThat(testSolicitudes.getNivelSoftSkill()).isEqualTo(UPDATED_NIVEL_SOFT_SKILL);
+        assertThat(testSolicitudes.getApellidoCandidatoPropuesto()).isEqualTo(UPDATED_APELLIDO_CANDIDATO_PROPUESTO);
     }
 
     @Test

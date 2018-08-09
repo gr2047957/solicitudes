@@ -11,13 +11,15 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="demoApp.solicitudes.id_solicitudes" for="field_id_solicitudes">Id Solicitudes</label>
-                    <input type="text" class="form-control" name="id_solicitudes" id="field_id_solicitudes"
-                        [(ngModel)]="solicitudes.id_solicitudes" />
+                    <input type="text"  class="form-control" name="id_solicitudes" id="field_id_solicitudes"
+                        [(ngModel)]="solicitudes.id_solicitudes"
+                           disabled />
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="demoApp.solicitudes.fecha_Registro" for="field_fecha_Registro">Fecha Registro</label>
                     <div class="input-group">
-                        <input id="field_fecha_Registro" type="text" class="form-control" name="fecha_Registro" ngbDatepicker  #fecha_RegistroDp="ngbDatepicker" [(ngModel)]="solicitudes.fecha_Registro"
+                        <input id="field_fecha_Registro"  disabled type="text" class="form-control" name="fecha_Registro" ngbDatepicker  #fecha_RegistroDp="ngbDatepicker"
+                        [(ngModel)]="solicitudes.fecha_Registro"
                         required/>
                         <span class="input-group-append">
                             <button type="button" class="btn btn-secondary" (click)="fecha_RegistroDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
@@ -32,8 +34,11 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="demoApp.solicitudes.solicitante" for="field_solicitante">Solicitante</label>
-                    <input type="text" class="form-control" name="solicitante" id="field_solicitante"
-                        [(ngModel)]="solicitudes.solicitante" required/>
+                   <!-- <input type="text" class="form-control" name="solicitante" id="field_solicitante"
+                        [(ngModel)]="solicitudes.solicitante" required/>-->
+                    <select ng-model="selectedCar">
+                        <option ng-repeat="x in cars" value="{{x.model}}">{{x.model}}</option>
+                    </select>
                     <div [hidden]="!(editForm.controls.solicitante?.dirty && editForm.controls.solicitante?.invalid)">
                         <small class="form-text text-danger"
                         [hidden]="!editForm.controls.solicitante?.errors?.required" jhiTranslate="entity.validation.required">
@@ -136,17 +141,6 @@
                     <div [hidden]="!(editForm.controls.nombreCandidatoPropuesto?.dirty && editForm.controls.nombreCandidatoPropuesto?.invalid)">
                         <small class="form-text text-danger"
                         [hidden]="!editForm.controls.nombreCandidatoPropuesto?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
-                        </small>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.apellidosCandidatoPropuesto" for="field_apellidosCandidatoPropuesto">Apellidos Candidato Propuesto</label>
-                    <input type="text" class="form-control" name="apellidosCandidatoPropuesto" id="field_apellidosCandidatoPropuesto"
-                        [(ngModel)]="solicitudes.apellidosCandidatoPropuesto" required/>
-                    <div [hidden]="!(editForm.controls.apellidosCandidatoPropuesto?.dirty && editForm.controls.apellidosCandidatoPropuesto?.invalid)">
-                        <small class="form-text text-danger"
-                        [hidden]="!editForm.controls.apellidosCandidatoPropuesto?.errors?.required" jhiTranslate="entity.validation.required">
                         This field is required.
                         </small>
                     </div>
@@ -283,6 +277,17 @@
                     <div [hidden]="!(editForm.controls.nivelSoftSkill?.dirty && editForm.controls.nivelSoftSkill?.invalid)">
                         <small class="form-text text-danger"
                         [hidden]="!editForm.controls.nivelSoftSkill?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoApp.solicitudes.apellidoCandidatoPropuesto" for="field_apellidoCandidatoPropuesto">Apellido Candidato Propuesto</label>
+                    <input type="text" class="form-control" name="apellidoCandidatoPropuesto" id="field_apellidoCandidatoPropuesto"
+                        [(ngModel)]="solicitudes.apellidoCandidatoPropuesto" required/>
+                    <div [hidden]="!(editForm.controls.apellidoCandidatoPropuesto?.dirty && editForm.controls.apellidoCandidatoPropuesto?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.apellidoCandidatoPropuesto?.errors?.required" jhiTranslate="entity.validation.required">
                         This field is required.
                         </small>
                     </div>

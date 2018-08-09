@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { ISolicitudes } from 'app/shared/model/solicitudes.model';
 import { SolicitudesService } from './solicitudes.service';
+import moment = require("moment");
 
 @Component({
     selector: 'jhi-solicitudes-update',
@@ -21,6 +22,7 @@ export class SolicitudesUpdateComponent implements OnInit {
         this.isSaving = false;
         this.activatedRoute.data.subscribe(({ solicitudes }) => {
             this.solicitudes = solicitudes;
+            this.solicitudes.fecha_Registro = moment();
         });
     }
 

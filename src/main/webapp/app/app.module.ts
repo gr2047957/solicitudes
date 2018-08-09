@@ -16,6 +16,8 @@ import { DemoHomeModule } from './home/home.module';
 import { DemoAccountModule } from './account/account.module';
 import { DemoEntityModule } from './entities/entity.module';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
+import { FormsModule} from "@angular/forms";
+
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
 
@@ -28,7 +30,8 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         DemoCoreModule,
         DemoHomeModule,
         DemoAccountModule,
-        DemoEntityModule
+        DemoEntityModule,
+        FormsModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],

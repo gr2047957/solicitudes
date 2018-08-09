@@ -69,10 +69,6 @@ public class Solicitudes implements Serializable {
     private String nombreCandidatoPropuesto;
 
     @NotNull
-    @Column(name = "apellidos_candidato_propuesto", nullable = false)
-    private String apellidosCandidatoPropuesto;
-
-    @NotNull
     @Column(name = "proveedor_candidato_propuesto", nullable = false)
     private String proveedorCandidatoPropuesto;
 
@@ -119,6 +115,10 @@ public class Solicitudes implements Serializable {
     @NotNull
     @Column(name = "nivel_soft_skill", nullable = false)
     private String nivelSoftSkill;
+
+    @NotNull
+    @Column(name = "apellido_candidato_propuesto", nullable = false)
+    private String apellidoCandidatoPropuesto;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -285,19 +285,6 @@ public class Solicitudes implements Serializable {
         this.nombreCandidatoPropuesto = nombreCandidatoPropuesto;
     }
 
-    public String getApellidosCandidatoPropuesto() {
-        return apellidosCandidatoPropuesto;
-    }
-
-    public Solicitudes apellidosCandidatoPropuesto(String apellidosCandidatoPropuesto) {
-        this.apellidosCandidatoPropuesto = apellidosCandidatoPropuesto;
-        return this;
-    }
-
-    public void setApellidosCandidatoPropuesto(String apellidosCandidatoPropuesto) {
-        this.apellidosCandidatoPropuesto = apellidosCandidatoPropuesto;
-    }
-
     public String getProveedorCandidatoPropuesto() {
         return proveedorCandidatoPropuesto;
     }
@@ -453,6 +440,19 @@ public class Solicitudes implements Serializable {
     public void setNivelSoftSkill(String nivelSoftSkill) {
         this.nivelSoftSkill = nivelSoftSkill;
     }
+
+    public String getApellidoCandidatoPropuesto() {
+        return apellidoCandidatoPropuesto;
+    }
+
+    public Solicitudes apellidoCandidatoPropuesto(String apellidoCandidatoPropuesto) {
+        this.apellidoCandidatoPropuesto = apellidoCandidatoPropuesto;
+        return this;
+    }
+
+    public void setApellidoCandidatoPropuesto(String apellidoCandidatoPropuesto) {
+        this.apellidoCandidatoPropuesto = apellidoCandidatoPropuesto;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -491,7 +491,6 @@ public class Solicitudes implements Serializable {
             ", servicio='" + getServicio() + "'" +
             ", periodosAsignacion='" + getPeriodosAsignacion() + "'" +
             ", nombreCandidatoPropuesto='" + getNombreCandidatoPropuesto() + "'" +
-            ", apellidosCandidatoPropuesto='" + getApellidosCandidatoPropuesto() + "'" +
             ", proveedorCandidatoPropuesto='" + getProveedorCandidatoPropuesto() + "'" +
             ", disponibilidadViajar='" + isDisponibilidadViajar() + "'" +
             ", experienciaSectorBancario='" + isExperienciaSectorBancario() + "'" +
@@ -504,6 +503,7 @@ public class Solicitudes implements Serializable {
             ", experiencia='" + getExperiencia() + "'" +
             ", softSkill='" + getSoftSkill() + "'" +
             ", nivelSoftSkill='" + getNivelSoftSkill() + "'" +
+            ", apellidoCandidatoPropuesto='" + getApellidoCandidatoPropuesto() + "'" +
             "}";
     }
 }

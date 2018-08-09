@@ -70,10 +70,6 @@
                 <constraints nullable="false" />
             </column>
 
-            <column name="apellidos_candidato_propuesto" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-
             <column name="proveedor_candidato_propuesto" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
@@ -119,6 +115,10 @@
             </column>
 
             <column name="nivel_soft_skill" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="apellido_candidato_propuesto" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
 

@@ -14,7 +14,6 @@ export interface ISolicitudes {
     servicio?: string;
     periodosAsignacion?: string;
     nombreCandidatoPropuesto?: string;
-    apellidosCandidatoPropuesto?: string;
     proveedorCandidatoPropuesto?: string;
     disponibilidadViajar?: boolean;
     experienciaSectorBancario?: boolean;
@@ -27,6 +26,7 @@ export interface ISolicitudes {
     experiencia?: string;
     softSkill?: string;
     nivelSoftSkill?: string;
+    apellidoCandidatoPropuesto?: string;
 }
 
 export class Solicitudes implements ISolicitudes {
@@ -44,7 +44,6 @@ export class Solicitudes implements ISolicitudes {
         public servicio?: string,
         public periodosAsignacion?: string,
         public nombreCandidatoPropuesto?: string,
-        public apellidosCandidatoPropuesto?: string,
         public proveedorCandidatoPropuesto?: string,
         public disponibilidadViajar?: boolean,
         public experienciaSectorBancario?: boolean,
@@ -56,7 +55,8 @@ export class Solicitudes implements ISolicitudes {
         public obligatorio?: string,
         public experiencia?: string,
         public softSkill?: string,
-        public nivelSoftSkill?: string
+        public nivelSoftSkill?: string,
+        public apellidoCandidatoPropuesto?: string
     ) {
         this.disponibilidadViajar = false;
         this.experienciaSectorBancario = false;

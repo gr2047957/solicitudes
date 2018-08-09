@@ -27,7 +27,6 @@
             <th jhiSortBy="servicio"><span jhiTranslate="demoApp.solicitudes.servicio">Servicio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="periodosAsignacion"><span jhiTranslate="demoApp.solicitudes.periodosAsignacion">Periodos Asignacion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="nombreCandidatoPropuesto"><span jhiTranslate="demoApp.solicitudes.nombreCandidatoPropuesto">Nombre Candidato Propuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="apellidosCandidatoPropuesto"><span jhiTranslate="demoApp.solicitudes.apellidosCandidatoPropuesto">Apellidos Candidato Propuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="proveedorCandidatoPropuesto"><span jhiTranslate="demoApp.solicitudes.proveedorCandidatoPropuesto">Proveedor Candidato Propuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="disponibilidadViajar"><span jhiTranslate="demoApp.solicitudes.disponibilidadViajar">Disponibilidad Viajar</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="experienciaSectorBancario"><span jhiTranslate="demoApp.solicitudes.experienciaSectorBancario">Experiencia Sector Bancario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -40,6 +39,7 @@
             <th jhiSortBy="experiencia"><span jhiTranslate="demoApp.solicitudes.experiencia">Experiencia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="softSkill"><span jhiTranslate="demoApp.solicitudes.softSkill">Soft Skill</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="nivelSoftSkill"><span jhiTranslate="demoApp.solicitudes.nivelSoftSkill">Nivel Soft Skill</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="apellidoCandidatoPropuesto"><span jhiTranslate="demoApp.solicitudes.apellidoCandidatoPropuesto">Apellido Candidato Propuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -58,7 +58,6 @@
                 <td>{{solicitudes.servicio}}</td>
                 <td>{{solicitudes.periodosAsignacion}}</td>
                 <td>{{solicitudes.nombreCandidatoPropuesto}}</td>
-                <td>{{solicitudes.apellidosCandidatoPropuesto}}</td>
                 <td>{{solicitudes.proveedorCandidatoPropuesto}}</td>
                 <td>{{solicitudes.disponibilidadViajar}}</td>
                 <td>{{solicitudes.experienciaSectorBancario}}</td>
@@ -71,6 +70,7 @@
                 <td>{{solicitudes.experiencia}}</td>
                 <td>{{solicitudes.softSkill}}</td>
                 <td>{{solicitudes.nivelSoftSkill}}</td>
+                <td>{{solicitudes.apellidoCandidatoPropuesto}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

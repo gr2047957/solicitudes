@@ -86,13 +86,6 @@
             ]
         },
         {
-            "fieldName": "apellidosCandidatoPropuesto",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
-        },
-        {
             "fieldName": "proveedorCandidatoPropuesto",
             "fieldType": "String",
             "fieldValidateRules": [
@@ -171,6 +164,13 @@
         },
         {
             "fieldName": "nivelSoftSkill",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "apellidoCandidatoPropuesto",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required"
